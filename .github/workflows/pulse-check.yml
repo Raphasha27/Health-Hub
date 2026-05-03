@@ -8,6 +8,11 @@ on:
 jobs:
   enforce:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      actions: write
+      statuses: write
+      pull-requests: write
     steps:
       - name: Checkout Health Hub
         uses: actions/checkout@v4
@@ -20,7 +25,7 @@ jobs:
       - name: Install dependencies
         run: pip install requests
 
-      - name: Enforce Green Ticks across all Repos
+      - name: Enforce Green Ticks & Optimize Billing
         env:
           GITHUB_TOKEN: ${{ secrets.HEALTH_HUB_TOKEN }}
         run: python green_tick_enforcer.py --username Raphasha27
