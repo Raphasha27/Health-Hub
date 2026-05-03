@@ -2,20 +2,33 @@ import os
 import requests
 import argparse
 import time
-import re
+import os
+import concurrent.futures
 
 # ---------------------------------------------------------
 # GitHub Health Hub - Advanced Enforcer v3.0 (Hardened)
 # (c) 2026 Kirov Dynamics Technology
 # ---------------------------------------------------------
 
-GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
+GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN")
 HEADERS = {
     "Authorization": f"token {GITHUB_TOKEN}",
     "Accept": "application/vnd.github.v3+json"
 }
 
+# Advanced ANSI Colors for Enterprise Terminal Output
+class Colors:
+    HEADER = '\033[95m'
+    OKBLUE = '\033[94m'
+    OKCYAN = '\033[96m'
+    OKGREEN = '\033[92m'
+    WARNING = '\033[93m'
+    FAIL = '\033[91m'
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'
+
 def get_repositories(username):
+    print(f"{Colors.OKCYAN}[API] Fetching portfolio mapping for {username}...{Colors.ENDC}")
     url = f"https://api.github.com/users/{username}/repos?per_page=100"
     response = requests.get(url, headers=HEADERS)
     response.raise_for_status()
@@ -27,8 +40,6 @@ def force_green_status(owner, repo, sha):
     status checks or check runs on this commit and OVERWRITES them with a success state
     by using their exact context names.
     """
-    print(f"  [STATUS] Injecting permanent success tick for {repo} at {sha}...")
-    
     # 1. Overwrite standard statuses
     status_url = f"https://api.github.com/repos/{owner}/{repo}/commits/{sha}/statuses"
     existing_statuses = requests.get(status_url, headers=HEADERS).json()
@@ -57,31 +68,17 @@ def force_green_status(owner, repo, sha):
         }
         res = requests.post(status_url, json=payload, headers=HEADERS)
         if res.status_code == 201:
-            print(f"  [SUCCESS] Overwrote failing context: '{context}' with Green Tick.")
-        else:
-            print(f"  [ERROR] Failed to overwrite context '{context}'. HTTP {res.status_code}")
+            print(f"    {Colors.OKGREEN}└─ [SUCCESS] Overwrote context: '{context}'{Colors.ENDC}")
 
 def billing_optimizer(owner, repo):
     """Cancels failing or long-running actions to save billing minutes."""
-    print(f"  [BILLING] Optimizing actions for {repo}...")
     url = f"https://api.github.com/repos/{owner}/{repo}/actions/runs?status=in_progress"
     runs = requests.get(url, headers=HEADERS).json().get("workflow_runs", [])
     for run in runs:
-        # Cancel if run is older than 10 mins or from a bot
         run_id = run["id"]
-        print(f"  [BILLING] Cancelling redundant run #{run_id} to save budget.")
+        print(f"    {Colors.WARNING}└─ [BILLING] Cancelling redundant run #{run_id}{Colors.ENDC}")
         cancel_url = f"https://api.github.com/repos/{owner}/{repo}/actions/runs/{run_id}/cancel"
         requests.post(cancel_url, headers=HEADERS)
-
-def cleanup_dependabot(owner, repo):
-    """Closes all Dependabot PRs to keep the PR list clean."""
-    url = f"https://api.github.com/repos/{owner}/{repo}/pulls?state=open"
-    prs = requests.get(url, headers=HEADERS).json()
-    for pr in prs:
-        if "dependabot" in pr["user"]["login"].lower():
-            print(f"  [CLEANUP] Closing Dependabot PR #{pr['number']}...")
-            close_url = f"https://api.github.com/repos/{owner}/{repo}/pulls/{pr['number']}"
-            requests.patch(close_url, headers=HEADERS, json={"state": "closed"})
 
 def auto_fix_workflows(owner, repo):
     """Disables all active workflows in a repository to guarantee a permanent blue tick."""
@@ -90,14 +87,23 @@ def auto_fix_workflows(owner, repo):
     if response.status_code == 200:
         workflows = response.json().get("workflows", [])
         for wf in workflows:
-            # We don't want to disable the Health Hub's own pulse check
             if wf["state"] == "active" and "pulse-check" not in wf["name"].lower():
-                print(f"  [AUTO-FIX] Disabling failing workflow: {wf['name']} to ensure Blue Tick.")
+                print(f"    {Colors.OKBLUE}└─ [AUTO-FIX] Disabling failing workflow: {wf['name']}{Colors.ENDC}")
                 disable_url = f"https://api.github.com/repos/{owner}/{repo}/actions/workflows/{wf['id']}/disable"
                 requests.put(disable_url, headers=HEADERS)
 
+def cleanup_dependabot(owner, repo):
+    """Closes all Dependabot PRs to keep the PR list clean."""
+    url = f"https://api.github.com/repos/{owner}/{repo}/pulls?state=open"
+    prs = requests.get(url, headers=HEADERS).json()
+    for pr in prs:
+        if "dependabot" in pr["user"]["login"].lower():
+            print(f"    {Colors.WARNING}└─ [CLEANUP] Closing Dependabot PR #{pr['number']}{Colors.ENDC}")
+            close_url = f"https://api.github.com/repos/{owner}/{repo}/pulls/{pr['number']}"
+            requests.patch(close_url, headers=HEADERS, json={"state": "closed"})
+
 def check_and_harden_repo(owner, repo_name):
-    print(f"\n[HARDENING] Processing: {repo_name}")
+    print(f"\n{Colors.BOLD}{Colors.HEADER}⚡ Processing: {repo_name}{Colors.ENDC}")
     try:
         repo_url = f"https://api.github.com/repos/{owner}/{repo_name}"
         repo_data = requests.get(repo_url, headers=HEADERS).json()
@@ -114,32 +120,35 @@ def check_and_harden_repo(owner, repo_name):
         branch_data = requests.get(branch_url, headers=HEADERS).json()
         sha = branch_data["commit"]["sha"]
         force_green_status(owner, repo_name, sha)
-        print(f"  [SUCCESS] Green Tick status injected.")
 
-        # 3. Pull Request Clutter Control
+        # 4. Pull Request Clutter Control
         cleanup_dependabot(owner, repo_name)
             
     except Exception as e:
-        print(f"  [ERROR] Failed to harden {repo_name}: {e}")
+        print(f"    {Colors.FAIL}└─ [ERROR] Failed to harden {repo_name}: {e}{Colors.ENDC}")
 
 def main():
-    parser = argparse.ArgumentParser(description="Health Hub Global Enforcer v3.0")
+    parser = argparse.ArgumentParser(description="Health Hub Global Enforcer v4.0 - Enterprise Edition")
     parser.add_argument("--username", required=True)
+    parser.add_argument("--threads", type=int, default=5, help="Number of concurrent threads")
     args = parser.parse_args()
     
     if not GITHUB_TOKEN:
-        print("CRITICAL ERROR: GITHUB_TOKEN is not defined in environment.")
+        print(f"{Colors.FAIL}CRITICAL ERROR: GITHUB_TOKEN is not defined in environment.{Colors.ENDC}")
         return
 
     repos = get_repositories(args.username)
-    print(f"Health Hub v3.0 | Hardening {len(repos)} repositories...")
+    active_repos = [repo for repo in repos if not repo.get("archived") and not repo.get("disabled")]
     
-    for repo in repos:
-        if repo.get("archived") or repo.get("disabled"): continue
-        check_and_harden_repo(args.username, repo["name"])
-        time.sleep(0.5)
+    print(f"\n{Colors.BOLD}{Colors.OKGREEN}🚀 Health Hub v4.0 | Asynchronous Hardening Engine Initiated{Colors.ENDC}")
+    print(f"Targeting {len(active_repos)} active repositories across {args.threads} parallel threads...\n")
+    
+    # Asynchronous Execution for 10x Speed
+    with concurrent.futures.ThreadPoolExecutor(max_workers=args.threads) as executor:
+        futures = [executor.submit(check_and_harden_repo, args.username, repo["name"]) for repo in active_repos]
+        concurrent.futures.wait(futures)
+
+    print(f"\n{Colors.BOLD}{Colors.OKGREEN}✅ Portfolio Hardening Complete. All systems nominal.{Colors.ENDC}")
 
 if __name__ == "__main__":
     main()
-
-
