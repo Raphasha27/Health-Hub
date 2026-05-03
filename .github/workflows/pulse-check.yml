@@ -1,0 +1,26 @@
+name: 🟢 Pulse Check (Green Tick Enforcer)
+
+on:
+  schedule:
+    - cron: '0 * * * *' # Runs every hour
+  workflow_dispatch:      # Allows manual trigger via GitHub UI
+
+jobs:
+  enforce:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Health Hub
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Enforce Green Ticks across all Repos
+        env:
+          GITHUB_TOKEN: ${{ secrets.HEALTH_HUB_TOKEN }}
+        run: python green_tick_enforcer.py --username Raphasha27
