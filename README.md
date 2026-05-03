@@ -72,6 +72,12 @@ The workflow in `.github/workflows/pulse-check.yml` handles everything in the cl
 
 ---
 
+## 👥 Contributors
+
+- **[@Raphasha27](https://github.com/Raphasha27)** — *Creator & Core Architect*
+
+---
+
 <p align="center">
   <b>Architected by Raphasha27 | Powered by Kirov Dynamics Technology</b><br>
   <i>"In an era of billing-heavy infrastructure, we build lean, autonomous, and hardened systems."</i>
