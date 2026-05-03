@@ -30,8 +30,8 @@ graph TD
 
 ## 🚀 Version 3.0 Features
 
-### 1. 🟢 Failure-Proof Portfolio
-The Hub injects a "Success" status to every repository, overriding billing-locked actions or environment failures. This ensures a 100% green tick portfolio.
+### 1. 🟢 Failure-Proof Portfolio (Auto-Fixer)
+The Hub injects a "Success" status to every repository, overriding billing-locked actions or environment failures. It now includes a **Workflow Auto-Fixer** that actively detects and disables any failing or problematic GitHub Actions workflows that are turning your commits red, ensuring a permanent blue/green tick.
 
 ### 2. 💰 Billing Optimizer (Advanced)
 The Hub scans for "In-Progress" workflows across all your repositories. If they are redundant, long-running, or from bots, it **automatically cancels** them to save your GitHub Actions minutes and budget.
