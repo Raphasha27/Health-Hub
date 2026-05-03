@@ -1,0 +1,34 @@
+# GitHub Dependabot Configuration
+# Place this file in .github/dependabot.yml in your repositories.
+#
+# This configuration tells Dependabot to check for updates,
+# but PREVENTS it from auto-merging or disturbing your commits.
+# You retain full control over when to merge PRs.
+
+version: 2
+updates:
+  # Check for npm/yarn updates
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    # Do not allow dependabot to auto-merge any updates
+    open-pull-requests-limit: 5
+    # Ignore major versions to prevent breaking changes automatically
+    ignore:
+      - dependency-name: "*"
+        update-types: ["version-update:semver-major"]
+
+  # Check for pip/python updates
+  - package-ecosystem: "pip"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 5
+
+  # Check for github actions updates
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "monthly"
+    open-pull-requests-limit: 3
