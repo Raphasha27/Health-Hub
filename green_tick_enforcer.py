@@ -103,7 +103,7 @@ def cleanup_dependabot(owner, repo):
             requests.patch(close_url, headers=HEADERS, json={"state": "closed"})
 
 def check_and_harden_repo(owner, repo_name):
-    print(f"\n{Colors.BOLD}{Colors.HEADER}⚡ Processing: {repo_name}{Colors.ENDC}")
+    print(f"\n{Colors.BOLD}{Colors.HEADER}[PROCESSING] {repo_name}{Colors.ENDC}")
     try:
         repo_url = f"https://api.github.com/repos/{owner}/{repo_name}"
         repo_data = requests.get(repo_url, headers=HEADERS).json()
@@ -125,7 +125,7 @@ def check_and_harden_repo(owner, repo_name):
         cleanup_dependabot(owner, repo_name)
             
     except Exception as e:
-        print(f"    {Colors.FAIL}└─ [ERROR] Failed to harden {repo_name}: {e}{Colors.ENDC}")
+        print(f"    {Colors.FAIL}L- [ERROR] Failed to harden {repo_name}: {e}{Colors.ENDC}")
 
 def main():
     parser = argparse.ArgumentParser(description="Health Hub Global Enforcer v4.0 - Enterprise Edition")
@@ -140,7 +140,7 @@ def main():
     repos = get_repositories(args.username)
     active_repos = [repo for repo in repos if not repo.get("archived") and not repo.get("disabled")]
     
-    print(f"\n{Colors.BOLD}{Colors.OKGREEN}🚀 Health Hub v4.0 | Asynchronous Hardening Engine Initiated{Colors.ENDC}")
+    print(f"\n{Colors.BOLD}{Colors.OKGREEN}[START] Health Hub v4.0 | Asynchronous Hardening Engine Initiated{Colors.ENDC}")
     print(f"Targeting {len(active_repos)} active repositories across {args.threads} parallel threads...\n")
     
     # Asynchronous Execution for 10x Speed
@@ -148,7 +148,7 @@ def main():
         futures = [executor.submit(check_and_harden_repo, args.username, repo["name"]) for repo in active_repos]
         concurrent.futures.wait(futures)
 
-    print(f"\n{Colors.BOLD}{Colors.OKGREEN}✅ Portfolio Hardening Complete. All systems nominal.{Colors.ENDC}")
+    print(f"\n{Colors.BOLD}{Colors.OKGREEN}[COMPLETE] Portfolio Hardening Complete. All systems nominal.{Colors.ENDC}")
 
 if __name__ == "__main__":
     main()
