@@ -55,7 +55,7 @@ def cleanup_dependabot(owner, repo):
             requests.patch(close_url, headers=HEADERS, json={"state": "closed"})
 
 def check_and_harden_repo(owner, repo_name):
-    print(f"\n⚡ Hardening: {repo_name}")
+    print(f"\n[HARDENING] Processing: {repo_name}")
     try:
         repo_url = f"https://api.github.com/repos/{owner}/{repo_name}"
         repo_data = requests.get(repo_url, headers=HEADERS).json()
@@ -69,13 +69,13 @@ def check_and_harden_repo(owner, repo_name):
         branch_data = requests.get(branch_url, headers=HEADERS).json()
         sha = branch_data["commit"]["sha"]
         force_green_status(owner, repo_name, sha)
-        print(f"  ✅ Green Tick status injected.")
+        print(f"  [SUCCESS] Green Tick status injected.")
 
         # 3. Pull Request Clutter Control
         cleanup_dependabot(owner, repo_name)
             
     except Exception as e:
-        print(f"  ❌ Failed to harden {repo_name}: {e}")
+        print(f"  [ERROR] Failed to harden {repo_name}: {e}")
 
 def main():
     parser = argparse.ArgumentParser(description="Health Hub Global Enforcer v3.0")
@@ -87,7 +87,7 @@ def main():
         return
 
     repos = get_repositories(args.username)
-    print(f"🚀 Health Hub v3.0 | Hardening {len(repos)} repositories...")
+    print(f"Health Hub v3.0 | Hardening {len(repos)} repositories...")
     
     for repo in repos:
         if repo.get("archived") or repo.get("disabled"): continue
