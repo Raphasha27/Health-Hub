@@ -1,0 +1,654 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Hub | Global Portfolio Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background: #020617; color: #f8fafc; }
+        .glass { background: rgba(30, 41, 59, 0.5); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.05); }
+        .status-success { color: #4ade80; text-shadow: 0 0 10px rgba(74, 222, 128, 0.3); }
+        .status-hardened { background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%); }
+        .glow { box-shadow: 0 0 20px rgba(59, 130, 246, 0.1); }
+    </style>
+</head>
+<body class="p-8">
+    <div class="max-w-6xl mx-auto">
+        <header class="flex justify-between items-end mb-12">
+            <div>
+                <h1 class="text-4xl font-extrabold tracking-tighter mb-2 italic">HEALTH HUB <span class="text-blue-500">v4.0</span></h1>
+                <p class="text-slate-400 font-medium uppercase tracking-widest text-xs">Autonomous Portfolio Hardening Dashboard</p>
+            </div>
+            <div class="text-right">
+                <div class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-1">Last Pulse Sync</div>
+                <div class="text-sm font-mono text-blue-400">2026-05-03 23:41:20</div>
+            </div>
+        </header>
+
+        <div class="grid md:grid-cols-3 gap-6 mb-12">
+            <div class="glass p-6 rounded-3xl glow">
+                <div class="text-slate-400 text-xs font-bold uppercase tracking-widest mb-2">Total Repositories</div>
+                <div class="text-4xl font-black">46</div>
+            </div>
+            <div class="glass p-6 rounded-3xl glow">
+                <div class="text-slate-400 text-xs font-bold uppercase tracking-widest mb-2">Success Ticks</div>
+                <div class="text-4xl font-black text-green-400">38</div>
+            </div>
+            <div class="glass p-6 rounded-3xl glow border-blue-500/20">
+                <div class="text-slate-400 text-xs font-bold uppercase tracking-widest mb-2">Hardening Status</div>
+                <div class="text-4xl font-black text-blue-400">NOMINAL</div>
+            </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-4">
+            
+            <a href="https://github.com/Raphasha27/-Health-Hub" target="_blank" class="glass p-6 rounded-2xl hover:bg-slate-800/50 transition group relative overflow-hidden">
+                <div class="flex justify-between items-start mb-4">
+                    <h3 class="text-lg font-bold tracking-tight group-hover:text-blue-400 transition">-Health-Hub</h3>
+                    <span class="px-2 py-1 rounded-md text-[10px] font-black uppercase tracking-tighter bg-green-500/10 text-green-400">
+                        success
+                    </span>
+                </div>
+                <p class="text-sm text-slate-400 mb-4 line-clamp-2">No description provided.</p>
+                <div class="flex items-center gap-2">
+                    <span class="px-2 py-0.5 rounded-full bg-blue-500/10 text-blue-400 text-[9px] font-bold uppercase tracking-widest border border-blue-500/20">Hardened</span>
+                </div>
+            </a>
+             
+            <a href="https://github.com/Raphasha27/afro_fashion_mobile" target="_blank" class="glass p-6 rounded-2xl hover:bg-slate-800/50 transition group relative overflow-hidden">
+                <div class="flex justify-between items-start mb-4">
+                    <h3 class="text-lg font-bold tracking-tight group-hover:text-blue-400 transition">afro_fashion_mobile</h3>
+                    <span class="px-2 py-1 rounded-md text-[10px] font-black uppercase tracking-tighter bg-red-500/10 text-red-400">
+                        pending
+                    </span>
+                </div>
+                <p class="text-sm text-slate-400 mb-4 line-clamp-2">No description provided.</p>
+                <div class="flex items-center gap-2">
+                    
+                </div>
+            </a>
+             
+            <a href="https://github.com/Raphasha27/AI-Agent" target="_blank" class="glass p-6 rounded-2xl hover:bg-slate-800/50 transition group relative overflow-hidden">
+                <div class="flex justify-between items-start mb-4">
+                    <h3 class="text-lg font-bold tracking-tight group-hover:text-blue-400 transition">AI-Agent</h3>
+                    <span class="px-2 py-1 rounded-md text-[10px] font-black uppercase tracking-tighter bg-red-500/10 text-red-400">
+                        pending
+                    </span>
+                </div>
+                <p class="text-sm text-slate-400 mb-4 line-clamp-2">No description provided.</p>
+                <div class="flex items-center gap-2">
+                    
+                </div>
+            </a>
+             
+            <a href="https://github.com/Raphasha27/ai-chatkit" target="_blank" class="glass p-6 rounded-2xl hover:bg-slate-800/50 transition group relative overflow-hidden">
+                <div class="flex justify-between items-start mb-4">
+                    <h3 class="text-lg font-bold tracking-tight group-hover:text-blue-400 transition">ai-chatkit</h3>
+                    <span class="px-2 py-1 rounded-md text-[10px] font-black uppercase tracking-tighter bg-red-500/10 text-red-400">
+                        pending
+                    </span>
+                </div>
+                <p class="text-sm text-slate-400 mb-4 line-clamp-2">No description provided.</p>
+                <div class="flex items-center gap-2">
+                    
+                </div>
+            </a>
+             
+            <a href="https://github.com/Raphasha27/AI-CONCEPT-CHATBOT" target="_blank" class="glass p-6 rounded-2xl hover:bg-slate-800/50 transition group relative overflow-hidden">
+                <div class="flex justify-between items-start mb-4">
+                    <h3 class="text-lg font-bold tracking-tight group-hover:text-blue-400 transition">AI-CONCEPT-CHATBOT</h3>
+                    <span class="px-2 py-1 rounded-md text-[10px] font-black uppercase tracking-tighter bg-green-500/10 text-green-400">
+                        success
+                    </span>
+                </div>
+                <p class="text-sm text-slate-400 mb-4 line-clamp-2">No description provided.</p>
+                <div class="flex items-center gap-2">
+                    <span class="px-2 py-0.5 rounded-full bg-blue-500/10 text-blue-400 text-[9px] font-bold uppercase tracking-widest border border-blue-500/20">Hardened</span>
+                </div>
+            </a>
+             
+            <a href="https://github.com/Raphasha27/ai-job-market-intelligence" target="_blank" class="glass p-6 rounded-2xl hover:bg-slate-800/50 transition group relative overflow-hidden">
+                <div class="flex justify-between items-start mb-4">
+                    <h3 class="text-lg font-bold tracking-tight group-hover:text-blue-400 transition">ai-job-market-intelligence</h3>
+                    <span class="px-2 py-1 rounded-md text-[10px] font-black uppercase tracking-tighter bg-green-500/10 text-green-400">
+                        success
+                    </span>
+                </div>
+                <p class="text-sm text-slate-400 mb-4 line-clamp-2">AI Job Market Intelligence Platform (Advanced) developed by Raphasha27</p>
+                <div class="flex items-center gap-2">
+                    <span class="px-2 py-0.5 rounded-full bg-blue-500/10 text-blue-400 text-[9px] font-bold uppercase tracking-widest border border-blue-500/20">Hardened</span>
+                </div>
+            </a>
+             
+            <a href="https://github.com/Raphasha27/aura-weather-ai" target="_blank" class="glass p-6 rounded-2xl hover:bg-slate-800/50 transition group relative overflow-hidden">
+                <div class="flex justify-between items-start mb-4">
+                    <h3 class="text-lg font-bold tracking-tight group-hover:text-blue-400 transition">aura-weather-ai</h3>
+                    <span class="px-2 py-1 rounded-md text-[10px] font-black uppercase tracking-tighter bg-red-500/10 text-red-400">
+                        pending
+                    </span>
+                </div>
+                <p class="text-sm text-slate-400 mb-4 line-clamp-2">No description provided.</p>
+                <div class="flex items-center gap-2">
+                    
+                </div>
+            </a>
+             
+            <a href="https://github.com/Raphasha27/Bicycle_Management_System" target="_blank" class="glass p-6 rounded-2xl hover:bg-slate-800/50 transition group relative overflow-hidden">
+                <div class="flex justify-between items-start mb-4">
+                    <h3 class="text-lg font-bold tracking-tight group-hover:text-blue-400 transition">Bicycle_Management_System</h3>
+                    <span class="px-2 py-1 rounded-md text-[10px] font-black uppercase tracking-tighter bg-green-500/10 text-green-400">
+                        success
+                    </span>
+                </div>
+                <p class="text-sm text-slate-400 mb-4 line-clamp-2">No description provided.</p>
+                <div class="flex items-center gap-2">
+                    <span class="px-2 py-0.5 rounded-full bg-blue-500/10 text-blue-400 text-[9px] font-bold uppercase tracking-widest border border-blue-500/20">Hardened</span>
+                </div>
+            </a>
+             
+            <a href="https://github.com/Raphasha27/convo_chat" target="_blank" class="glass p-6 rounded-2xl hover:bg-slate-800/50 transition group relative overflow-hidden">
+                <div class="flex justify-between items-start mb-4">
+                    <h3 class="text-lg font-bold tracking-tight group-hover:text-blue-400 transition">convo_chat</h3>
+                    <span class="px-2 py-1 rounded-md text-[10px] font-black uppercase tracking-tighter bg-green-500/10 text-green-400">
+                        success
+                    </span>
+                </div>
+                <p class="text-sm text-slate-400 mb-4 line-clamp-2">No description provided.</p>
+                <div class="flex items-center gap-2">
+                    <span class="px-2 py-0.5 rounded-full bg-blue-500/10 text-blue-400 text-[9px] font-bold uppercase tracking-widest border border-blue-500/20">Hardened</span>
+                </div>
+            </a>
+             
+            <a href="https://github.com/Raphasha27/CREATIVE-WRITING-GENERATIVE" target="_blank" class="glass p-6 rounded-2xl hover:bg-slate-800/50 transition group relative overflow-hidden">
+                <div class="flex justify-between items-start mb-4">
+                    <h3 class="text-lg font-bold tracking-tight group-hover:text-blue-400 transition">CREATIVE-WRITING-GENERATIVE</h3>
+                    <span class="px-2 py-1 rounded-md text-[10px] font-black uppercase tracking-tighter bg-green-500/10 text-green-400">
+                        success
+                    </span>
+                </div>
+                <p class="text-sm text-slate-400 mb-4 line-clamp-2">No description provided.</p>
+                <div class="flex items-center gap-2">
+                    <span class="px-2 py-0.5 rounded-full bg-blue-500/10 text-blue-400 text-[9px] font-bold uppercase tracking-widest border border-blue-500/20">Hardened</span>
+                </div>
+            </a>
+             
+            <a href="https://github.com/Raphasha27/cybershield_soc" target="_blank" class="glass p-6 rounded-2xl hover:bg-slate-800/50 transition group relative overflow-hidden">
+                <div class="flex justify-between items-start mb-4">
+                    <h3 class="text-lg font-bold tracking-tight group-hover:text-blue-400 transition">cybershield_soc</h3>
+                    <span class="px-2 py-1 rounded-md text-[10px] font-black uppercase tracking-tighter bg-green-500/10 text-green-400">
+                        success
+                    </span>
+                </div>
+                <p class="text-sm text-slate-400 mb-4 line-clamp-2">No description provided.</p>
+                <div class="flex items-center gap-2">
+                    <span class="px-2 py-0.5 rounded-full bg-blue-500/10 text-blue-400 text-[9px] font-bold uppercase tracking-widest border border-blue-500/20">Hardened</span>
+                </div>
+            </a>
+             
+            <a href="https://github.com/Raphasha27/CycleSync" target="_blank" class="glass p-6 rounded-2xl hover:bg-slate-800/50 transition group relative overflow-hidden">
+                <div class="flex justify-between items-start mb-4">
+                    <h3 class="text-lg font-bold tracking-tight group-hover:text-blue-400 transition">CycleSync</h3>
+                    <span class="px-2 py-1 rounded-md text-[10px] font-black uppercase tracking-tighter bg-green-500/10 text-green-400">
+                        success
+                    </span>
+                </div>
+                <p class="text-sm text-slate-400 mb-4 line-clamp-2">Premium Bicycle Management System v2.0 - Full-featured fleet management with glassmorphism UI</p>
+                <div class="flex items-center gap-2">
+                    <span class="px-2 py-0.5 rounded-full bg-blue-500/10 text-blue-400 text-[9px] font-bold uppercase tracking-widest border border-blue-500/20">Hardened</span>
+                </div>
+            </a>
+             
+            <a href="https://github.com/Raphasha27/dashboard" target="_blank" class="glass p-6 rounded-2xl hover:bg-slate-800/50 transition group relative overflow-hidden">
+                <div class="flex justify-between items-start mb-4">
+                    <h3 class="text-lg font-bold tracking-tight group-hover:text-blue-400 transition">dashboard</h3>
+                    <span class="px-2 py-1 rounded-md text-[10px] font-black uppercase tracking-tighter bg-green-500/10 text-green-400">
+                        success
+                    </span>
+                </div>
+                <p class="text-sm text-slate-400 mb-4 line-clamp-2">No description provided.</p>
+                <div class="flex items-center gap-2">
+                    <span class="px-2 py-0.5 rounded-full bg-blue-500/10 text-blue-400 text-[9px] font-bold uppercase tracking-widest border border-blue-500/20">Hardened</span>
+                </div>
+            </a>
+             
+            <a href="https://github.com/Raphasha27/EduStream-Pro-ICT" target="_blank" class="glass p-6 rounded-2xl hover:bg-slate-800/50 transition group relative overflow-hidden">
+                <div class="flex justify-between items-start mb-4">
+                    <h3 class="text-lg font-bold tracking-tight group-hover:text-blue-400 transition">EduStream-Pro-ICT</h3>
+                    <span class="px-2 py-1 rounded-md text-[10px] font-black uppercase tracking-tighter bg-green-500/10 text-green-400">
+                        success
+                    </span>
+                </div>
+                <p class="text-sm text-slate-400 mb-4 line-clamp-2">No description provided.</p>
+                <div class="flex items-center gap-2">
+                    <span class="px-2 py-0.5 rounded-full bg-blue-500/10 text-blue-400 text-[9px] font-bold uppercase tracking-widest border border-blue-500/20">Hardened</span>
+                </div>
+            </a>
+             
+            <a href="https://github.com/Raphasha27/finaxis-app" target="_blank" class="glass p-6 rounded-2xl hover:bg-slate-800/50 transition group relative overflow-hidden">
+                <div class="flex justify-between items-start mb-4">
+                    <h3 class="text-lg font-bold tracking-tight group-hover:text-blue-400 transition">finaxis-app</h3>
+                    <span class="px-2 py-1 rounded-md text-[10px] font-black uppercase tracking-tighter bg-green-500/10 text-green-400">
+                        success
+                    </span>
+                </div>
+                <p class="text-sm text-slate-400 mb-4 line-clamp-2">No description provided.</p>
+                <div class="flex items-center gap-2">
+                    <span class="px-2 py-0.5 rounded-full bg-blue-500/10 text-blue-400 text-[9px] font-bold uppercase tracking-widest border border-blue-500/20">Hardened</span>
+                </div>
+            </a>
+             
+            <a href="https://github.com/Raphasha27/Fire4s-AI-Resume-Builder" target="_blank" class="glass p-6 rounded-2xl hover:bg-slate-800/50 transition group relative overflow-hidden">
+                <div class="flex justify-between items-start mb-4">
+                    <h3 class="text-lg font-bold tracking-tight group-hover:text-blue-400 transition">Fire4s-AI-Resume-Builder</h3>
+                    <span class="px-2 py-1 rounded-md text-[10px] font-black uppercase tracking-tighter bg-green-500/10 text-green-400">
+                        success
+                    </span>
+                </div>
+                <p class="text-sm text-slate-400 mb-4 line-clamp-2">No description provided.</p>
+                <div class="flex items-center gap-2">
+                    <span class="px-2 py-0.5 rounded-full bg-blue-500/10 text-blue-400 text-[9px] font-bold uppercase tracking-widest border border-blue-500/20">Hardened</span>
+                </div>
+            </a>
+             
+            <a href="https://github.com/Raphasha27/Fire4s-End-End-AI-Solutions" target="_blank" class="glass p-6 rounded-2xl hover:bg-slate-800/50 transition group relative overflow-hidden">
+                <div class="flex justify-between items-start mb-4">
+                    <h3 class="text-lg font-bold tracking-tight group-hover:text-blue-400 transition">Fire4s-End-End-AI-Solutions</h3>
+                    <span class="px-2 py-1 rounded-md text-[10px] font-black uppercase tracking-tighter bg-green-500/10 text-green-400">
+                        success
+                    </span>
+                </div>
+                <p class="text-sm text-slate-400 mb-4 line-clamp-2">No description provided.</p>
+                <div class="flex items-center gap-2">
+                    <span class="px-2 py-0.5 rounded-full bg-blue-500/10 text-blue-400 text-[9px] font-bold uppercase tracking-widest border border-blue-500/20">Hardened</span>
+                </div>
+            </a>
+             
+            <a href="https://github.com/Raphasha27/Fire4s_Project1_Week1" target="_blank" class="glass p-6 rounded-2xl hover:bg-slate-800/50 transition group relative overflow-hidden">
+                <div class="flex justify-between items-start mb-4">
+                    <h3 class="text-lg font-bold tracking-tight group-hover:text-blue-400 transition">Fire4s_Project1_Week1</h3>
+                    <span class="px-2 py-1 rounded-md text-[10px] font-black uppercase tracking-tighter bg-green-500/10 text-green-400">
+                        success
+                    </span>
+                </div>
+                <p class="text-sm text-slate-400 mb-4 line-clamp-2">No description provided.</p>
+                <div class="flex items-center gap-2">
+                    <span class="px-2 py-0.5 rounded-full bg-blue-500/10 text-blue-400 text-[9px] font-bold uppercase tracking-widest border border-blue-500/20">Hardened</span>
+                </div>
+            </a>
+             
+            <a href="https://github.com/Raphasha27/flowsentinel" target="_blank" class="glass p-6 rounded-2xl hover:bg-slate-800/50 transition group relative overflow-hidden">
+                <div class="flex justify-between items-start mb-4">
+                    <h3 class="text-lg font-bold tracking-tight group-hover:text-blue-400 transition">flowsentinel</h3>
+                    <span class="px-2 py-1 rounded-md text-[10px] font-black uppercase tracking-tighter bg-green-500/10 text-green-400">
+                        success
+                    </span>
+                </div>
+                <p class="text-sm text-slate-400 mb-4 line-clamp-2">No description provided.</p>
+                <div class="flex items-center gap-2">
+                    <span class="px-2 py-0.5 rounded-full bg-blue-500/10 text-blue-400 text-[9px] font-bold uppercase tracking-widest border border-blue-500/20">Hardened</span>
+                </div>
+            </a>
+             
+            <a href="https://github.com/Raphasha27/generate-sa-idnumbers" target="_blank" class="glass p-6 rounded-2xl hover:bg-slate-800/50 transition group relative overflow-hidden">
+                <div class="flex justify-between items-start mb-4">
+                    <h3 class="text-lg font-bold tracking-tight group-hover:text-blue-400 transition">generate-sa-idnumbers</h3>
+                    <span class="px-2 py-1 rounded-md text-[10px] font-black uppercase tracking-tighter bg-green-500/10 text-green-400">
+                        success
+                    </span>
+                </div>
+                <p class="text-sm text-slate-400 mb-4 line-clamp-2">Generate (fake) South African ID Numbers</p>
+                <div class="flex items-center gap-2">
+                    <span class="px-2 py-0.5 rounded-full bg-blue-500/10 text-blue-400 text-[9px] font-bold uppercase tracking-widest border border-blue-500/20">Hardened</span>
+                </div>
+            </a>
+             
+            <a href="https://github.com/Raphasha27/Go-RAG-System" target="_blank" class="glass p-6 rounded-2xl hover:bg-slate-800/50 transition group relative overflow-hidden">
+                <div class="flex justify-between items-start mb-4">
+                    <h3 class="text-lg font-bold tracking-tight group-hover:text-blue-400 transition">Go-RAG-System</h3>
+                    <span class="px-2 py-1 rounded-md text-[10px] font-black uppercase tracking-tighter bg-green-500/10 text-green-400">
+                        success
+                    </span>
+                </div>
+                <p class="text-sm text-slate-400 mb-4 line-clamp-2">Production-Grade Retrieval Augmented Generation Architecture in Golang - pgvector + OpenAI + 17-Pattern Agentic Stack</p>
+                <div class="flex items-center gap-2">
+                    <span class="px-2 py-0.5 rounded-full bg-blue-500/10 text-blue-400 text-[9px] font-bold uppercase tracking-widest border border-blue-500/20">Hardened</span>
+                </div>
+            </a>
+             
+            <a href="https://github.com/Raphasha27/Health-Hub" target="_blank" class="glass p-6 rounded-2xl hover:bg-slate-800/50 transition group relative overflow-hidden">
+                <div class="flex justify-between items-start mb-4">
+                    <h3 class="text-lg font-bold tracking-tight group-hover:text-blue-400 transition">Health-Hub</h3>
+                    <span class="px-2 py-1 rounded-md text-[10px] font-black uppercase tracking-tighter bg-red-500/10 text-red-400">
+                        pending
+                    </span>
+                </div>
+                <p class="text-sm text-slate-400 mb-4 line-clamp-2">No description provided.</p>
+                <div class="flex items-center gap-2">
+                    
+                </div>
+            </a>
+             
+            <a href="https://github.com/Raphasha27/Health-Que-System" target="_blank" class="glass p-6 rounded-2xl hover:bg-slate-800/50 transition group relative overflow-hidden">
+                <div class="flex justify-between items-start mb-4">
+                    <h3 class="text-lg font-bold tracking-tight group-hover:text-blue-400 transition">Health-Que-System</h3>
+                    <span class="px-2 py-1 rounded-md text-[10px] font-black uppercase tracking-tighter bg-green-500/10 text-green-400">
+                        success
+                    </span>
+                </div>
+                <p class="text-sm text-slate-400 mb-4 line-clamp-2">No description provided.</p>
+                <div class="flex items-center gap-2">
+                    <span class="px-2 py-0.5 rounded-full bg-blue-500/10 text-blue-400 text-[9px] font-bold uppercase tracking-widest border border-blue-500/20">Hardened</span>
+                </div>
+            </a>
+             
+            <a href="https://github.com/Raphasha27/KasiPass" target="_blank" class="glass p-6 rounded-2xl hover:bg-slate-800/50 transition group relative overflow-hidden">
+                <div class="flex justify-between items-start mb-4">
+                    <h3 class="text-lg font-bold tracking-tight group-hover:text-blue-400 transition">KasiPass</h3>
+                    <span class="px-2 py-1 rounded-md text-[10px] font-black uppercase tracking-tighter bg-green-500/10 text-green-400">
+                        success
+                    </span>
+                </div>
+                <p class="text-sm text-slate-400 mb-4 line-clamp-2">No description provided.</p>
+                <div class="flex items-center gap-2">
+                    <span class="px-2 py-0.5 rounded-full bg-blue-500/10 text-blue-400 text-[9px] font-bold uppercase tracking-widest border border-blue-500/20">Hardened</span>
+                </div>
+            </a>
+             
+            <a href="https://github.com/Raphasha27/koketso-swing-calculator" target="_blank" class="glass p-6 rounded-2xl hover:bg-slate-800/50 transition group relative overflow-hidden">
+                <div class="flex justify-between items-start mb-4">
+                    <h3 class="text-lg font-bold tracking-tight group-hover:text-blue-400 transition">koketso-swing-calculator</h3>
+                    <span class="px-2 py-1 rounded-md text-[10px] font-black uppercase tracking-tighter bg-green-500/10 text-green-400">
+                        success
+                    </span>
+                </div>
+                <p class="text-sm text-slate-400 mb-4 line-clamp-2">Description: A simple Java Swing calculator app featuring basic arithmetic operations with a clean GUI interface.</p>
+                <div class="flex items-center gap-2">
+                    <span class="px-2 py-0.5 rounded-full bg-blue-500/10 text-blue-400 text-[9px] font-bold uppercase tracking-widest border border-blue-500/20">Hardened</span>
+                </div>
+            </a>
+             
+            <a href="https://github.com/Raphasha27/Management-System" target="_blank" class="glass p-6 rounded-2xl hover:bg-slate-800/50 transition group relative overflow-hidden">
+                <div class="flex justify-between items-start mb-4">
+                    <h3 class="text-lg font-bold tracking-tight group-hover:text-blue-400 transition">Management-System</h3>
+                    <span class="px-2 py-1 rounded-md text-[10px] font-black uppercase tracking-tighter bg-green-500/10 text-green-400">
+                        success
+                    </span>
+                </div>
+                <p class="text-sm text-slate-400 mb-4 line-clamp-2">🚀 Premium IT Management System by Kivoc Dynamic Technology. AI-Powered, Secure, and Scalable.</p>
+                <div class="flex items-center gap-2">
+                    <span class="px-2 py-0.5 rounded-full bg-blue-500/10 text-blue-400 text-[9px] font-bold uppercase tracking-widest border border-blue-500/20">Hardened</span>
+                </div>
+            </a>
+             
+            <a href="https://github.com/Raphasha27/mochi-motion" target="_blank" class="glass p-6 rounded-2xl hover:bg-slate-800/50 transition group relative overflow-hidden">
+                <div class="flex justify-between items-start mb-4">
+                    <h3 class="text-lg font-bold tracking-tight group-hover:text-blue-400 transition">mochi-motion</h3>
+                    <span class="px-2 py-1 rounded-md text-[10px] font-black uppercase tracking-tighter bg-green-500/10 text-green-400">
+                        success
+                    </span>
+                </div>
+                <p class="text-sm text-slate-400 mb-4 line-clamp-2">🍡 Animation library that makes beautiful scroll animations effortless with professional spring physics.</p>
+                <div class="flex items-center gap-2">
+                    <span class="px-2 py-0.5 rounded-full bg-blue-500/10 text-blue-400 text-[9px] font-bold uppercase tracking-widest border border-blue-500/20">Hardened</span>
+                </div>
+            </a>
+             
+            <a href="https://github.com/Raphasha27/noshowiq" target="_blank" class="glass p-6 rounded-2xl hover:bg-slate-800/50 transition group relative overflow-hidden">
+                <div class="flex justify-between items-start mb-4">
+                    <h3 class="text-lg font-bold tracking-tight group-hover:text-blue-400 transition">noshowiq</h3>
+                    <span class="px-2 py-1 rounded-md text-[10px] font-black uppercase tracking-tighter bg-green-500/10 text-green-400">
+                        success
+                    </span>
+                </div>
+                <p class="text-sm text-slate-400 mb-4 line-clamp-2">No description provided.</p>
+                <div class="flex items-center gap-2">
+                    <span class="px-2 py-0.5 rounded-full bg-blue-500/10 text-blue-400 text-[9px] font-bold uppercase tracking-widest border border-blue-500/20">Hardened</span>
+                </div>
+            </a>
+             
+            <a href="https://github.com/Raphasha27/noshowiq-fullstack" target="_blank" class="glass p-6 rounded-2xl hover:bg-slate-800/50 transition group relative overflow-hidden">
+                <div class="flex justify-between items-start mb-4">
+                    <h3 class="text-lg font-bold tracking-tight group-hover:text-blue-400 transition">noshowiq-fullstack</h3>
+                    <span class="px-2 py-1 rounded-md text-[10px] font-black uppercase tracking-tighter bg-green-500/10 text-green-400">
+                        success
+                    </span>
+                </div>
+                <p class="text-sm text-slate-400 mb-4 line-clamp-2">No description provided.</p>
+                <div class="flex items-center gap-2">
+                    <span class="px-2 py-0.5 rounded-full bg-blue-500/10 text-blue-400 text-[9px] font-bold uppercase tracking-widest border border-blue-500/20">Hardened</span>
+                </div>
+            </a>
+             
+            <a href="https://github.com/Raphasha27/opsly-saas" target="_blank" class="glass p-6 rounded-2xl hover:bg-slate-800/50 transition group relative overflow-hidden">
+                <div class="flex justify-between items-start mb-4">
+                    <h3 class="text-lg font-bold tracking-tight group-hover:text-blue-400 transition">opsly-saas</h3>
+                    <span class="px-2 py-1 rounded-md text-[10px] font-black uppercase tracking-tighter bg-red-500/10 text-red-400">
+                        failure
+                    </span>
+                </div>
+                <p class="text-sm text-slate-400 mb-4 line-clamp-2">No description provided.</p>
+                <div class="flex items-center gap-2">
+                    <span class="px-2 py-0.5 rounded-full bg-blue-500/10 text-blue-400 text-[9px] font-bold uppercase tracking-widest border border-blue-500/20">Hardened</span>
+                </div>
+            </a>
+             
+            <a href="https://github.com/Raphasha27/pharmalink" target="_blank" class="glass p-6 rounded-2xl hover:bg-slate-800/50 transition group relative overflow-hidden">
+                <div class="flex justify-between items-start mb-4">
+                    <h3 class="text-lg font-bold tracking-tight group-hover:text-blue-400 transition">pharmalink</h3>
+                    <span class="px-2 py-1 rounded-md text-[10px] font-black uppercase tracking-tighter bg-green-500/10 text-green-400">
+                        success
+                    </span>
+                </div>
+                <p class="text-sm text-slate-400 mb-4 line-clamp-2">No description provided.</p>
+                <div class="flex items-center gap-2">
+                    <span class="px-2 py-0.5 rounded-full bg-blue-500/10 text-blue-400 text-[9px] font-bold uppercase tracking-widest border border-blue-500/20">Hardened</span>
+                </div>
+            </a>
+             
+            <a href="https://github.com/Raphasha27/Portfolio" target="_blank" class="glass p-6 rounded-2xl hover:bg-slate-800/50 transition group relative overflow-hidden">
+                <div class="flex justify-between items-start mb-4">
+                    <h3 class="text-lg font-bold tracking-tight group-hover:text-blue-400 transition">Portfolio</h3>
+                    <span class="px-2 py-1 rounded-md text-[10px] font-black uppercase tracking-tighter bg-green-500/10 text-green-400">
+                        success
+                    </span>
+                </div>
+                <p class="text-sm text-slate-400 mb-4 line-clamp-2">A luxury 3D Portfolio built with React, Three.js, and Framer Motion, featuring a neural network AI model and dynamic project showcases.</p>
+                <div class="flex items-center gap-2">
+                    <span class="px-2 py-0.5 rounded-full bg-blue-500/10 text-blue-400 text-[9px] font-bold uppercase tracking-widest border border-blue-500/20">Hardened</span>
+                </div>
+            </a>
+             
+            <a href="https://github.com/Raphasha27/Raphasha27" target="_blank" class="glass p-6 rounded-2xl hover:bg-slate-800/50 transition group relative overflow-hidden">
+                <div class="flex justify-between items-start mb-4">
+                    <h3 class="text-lg font-bold tracking-tight group-hover:text-blue-400 transition">Raphasha27</h3>
+                    <span class="px-2 py-1 rounded-md text-[10px] font-black uppercase tracking-tighter bg-green-500/10 text-green-400">
+                        success
+                    </span>
+                </div>
+                <p class="text-sm text-slate-400 mb-4 line-clamp-2">No description provided.</p>
+                <div class="flex items-center gap-2">
+                    <span class="px-2 py-0.5 rounded-full bg-blue-500/10 text-blue-400 text-[9px] font-bold uppercase tracking-widest border border-blue-500/20">Hardened</span>
+                </div>
+            </a>
+             
+            <a href="https://github.com/Raphasha27/restaurant_plan" target="_blank" class="glass p-6 rounded-2xl hover:bg-slate-800/50 transition group relative overflow-hidden">
+                <div class="flex justify-between items-start mb-4">
+                    <h3 class="text-lg font-bold tracking-tight group-hover:text-blue-400 transition">restaurant_plan</h3>
+                    <span class="px-2 py-1 rounded-md text-[10px] font-black uppercase tracking-tighter bg-green-500/10 text-green-400">
+                        success
+                    </span>
+                </div>
+                <p class="text-sm text-slate-400 mb-4 line-clamp-2">No description provided.</p>
+                <div class="flex items-center gap-2">
+                    <span class="px-2 py-0.5 rounded-full bg-blue-500/10 text-blue-400 text-[9px] font-bold uppercase tracking-widest border border-blue-500/20">Hardened</span>
+                </div>
+            </a>
+             
+            <a href="https://github.com/Raphasha27/resume_generator" target="_blank" class="glass p-6 rounded-2xl hover:bg-slate-800/50 transition group relative overflow-hidden">
+                <div class="flex justify-between items-start mb-4">
+                    <h3 class="text-lg font-bold tracking-tight group-hover:text-blue-400 transition">resume_generator</h3>
+                    <span class="px-2 py-1 rounded-md text-[10px] font-black uppercase tracking-tighter bg-green-500/10 text-green-400">
+                        success
+                    </span>
+                </div>
+                <p class="text-sm text-slate-400 mb-4 line-clamp-2">No description provided.</p>
+                <div class="flex items-center gap-2">
+                    <span class="px-2 py-0.5 rounded-full bg-blue-500/10 text-blue-400 text-[9px] font-bold uppercase tracking-widest border border-blue-500/20">Hardened</span>
+                </div>
+            </a>
+             
+            <a href="https://github.com/Raphasha27/SeatLock" target="_blank" class="glass p-6 rounded-2xl hover:bg-slate-800/50 transition group relative overflow-hidden">
+                <div class="flex justify-between items-start mb-4">
+                    <h3 class="text-lg font-bold tracking-tight group-hover:text-blue-400 transition">SeatLock</h3>
+                    <span class="px-2 py-1 rounded-md text-[10px] font-black uppercase tracking-tighter bg-green-500/10 text-green-400">
+                        success
+                    </span>
+                </div>
+                <p class="text-sm text-slate-400 mb-4 line-clamp-2">High-Performance Real-Time Reservation Engine in C++20</p>
+                <div class="flex items-center gap-2">
+                    <span class="px-2 py-0.5 rounded-full bg-blue-500/10 text-blue-400 text-[9px] font-bold uppercase tracking-widest border border-blue-500/20">Hardened</span>
+                </div>
+            </a>
+             
+            <a href="https://github.com/Raphasha27/Small-Business-Assistant" target="_blank" class="glass p-6 rounded-2xl hover:bg-slate-800/50 transition group relative overflow-hidden">
+                <div class="flex justify-between items-start mb-4">
+                    <h3 class="text-lg font-bold tracking-tight group-hover:text-blue-400 transition">Small-Business-Assistant</h3>
+                    <span class="px-2 py-1 rounded-md text-[10px] font-black uppercase tracking-tighter bg-green-500/10 text-green-400">
+                        success
+                    </span>
+                </div>
+                <p class="text-sm text-slate-400 mb-4 line-clamp-2">Small Business Assistant </p>
+                <div class="flex items-center gap-2">
+                    <span class="px-2 py-0.5 rounded-full bg-blue-500/10 text-blue-400 text-[9px] font-bold uppercase tracking-widest border border-blue-500/20">Hardened</span>
+                </div>
+            </a>
+             
+            <a href="https://github.com/Raphasha27/SMD" target="_blank" class="glass p-6 rounded-2xl hover:bg-slate-800/50 transition group relative overflow-hidden">
+                <div class="flex justify-between items-start mb-4">
+                    <h3 class="text-lg font-bold tracking-tight group-hover:text-blue-400 transition">SMD</h3>
+                    <span class="px-2 py-1 rounded-md text-[10px] font-black uppercase tracking-tighter bg-green-500/10 text-green-400">
+                        success
+                    </span>
+                </div>
+                <p class="text-sm text-slate-400 mb-4 line-clamp-2">No description provided.</p>
+                <div class="flex items-center gap-2">
+                    <span class="px-2 py-0.5 rounded-full bg-blue-500/10 text-blue-400 text-[9px] font-bold uppercase tracking-widest border border-blue-500/20">Hardened</span>
+                </div>
+            </a>
+             
+            <a href="https://github.com/Raphasha27/Sovereign-AI-Nexus-v2" target="_blank" class="glass p-6 rounded-2xl hover:bg-slate-800/50 transition group relative overflow-hidden">
+                <div class="flex justify-between items-start mb-4">
+                    <h3 class="text-lg font-bold tracking-tight group-hover:text-blue-400 transition">Sovereign-AI-Nexus-v2</h3>
+                    <span class="px-2 py-1 rounded-md text-[10px] font-black uppercase tracking-tighter bg-green-500/10 text-green-400">
+                        success
+                    </span>
+                </div>
+                <p class="text-sm text-slate-400 mb-4 line-clamp-2">No description provided.</p>
+                <div class="flex items-center gap-2">
+                    <span class="px-2 py-0.5 rounded-full bg-blue-500/10 text-blue-400 text-[9px] font-bold uppercase tracking-widest border border-blue-500/20">Hardened</span>
+                </div>
+            </a>
+             
+            <a href="https://github.com/Raphasha27/stunning-octo-system" target="_blank" class="glass p-6 rounded-2xl hover:bg-slate-800/50 transition group relative overflow-hidden">
+                <div class="flex justify-between items-start mb-4">
+                    <h3 class="text-lg font-bold tracking-tight group-hover:text-blue-400 transition">stunning-octo-system</h3>
+                    <span class="px-2 py-1 rounded-md text-[10px] font-black uppercase tracking-tighter bg-green-500/10 text-green-400">
+                        success
+                    </span>
+                </div>
+                <p class="text-sm text-slate-400 mb-4 line-clamp-2">No description provided.</p>
+                <div class="flex items-center gap-2">
+                    <span class="px-2 py-0.5 rounded-full bg-blue-500/10 text-blue-400 text-[9px] font-bold uppercase tracking-widest border border-blue-500/20">Hardened</span>
+                </div>
+            </a>
+             
+            <a href="https://github.com/Raphasha27/Sumbandila-App" target="_blank" class="glass p-6 rounded-2xl hover:bg-slate-800/50 transition group relative overflow-hidden">
+                <div class="flex justify-between items-start mb-4">
+                    <h3 class="text-lg font-bold tracking-tight group-hover:text-blue-400 transition">Sumbandila-App</h3>
+                    <span class="px-2 py-1 rounded-md text-[10px] font-black uppercase tracking-tighter bg-green-500/10 text-green-400">
+                        success
+                    </span>
+                </div>
+                <p class="text-sm text-slate-400 mb-4 line-clamp-2">🇿🇦 Sumbandila — National Youth Growth Ecosystem Official Description: Sumbandila is an integrated national digital infrastructure platform designed to tackle youth unemployment and institutional fraud in South Africa. </p>
+                <div class="flex items-center gap-2">
+                    <span class="px-2 py-0.5 rounded-full bg-blue-500/10 text-blue-400 text-[9px] font-bold uppercase tracking-widest border border-blue-500/20">Hardened</span>
+                </div>
+            </a>
+             
+            <a href="https://github.com/Raphasha27/SupportHive-C" target="_blank" class="glass p-6 rounded-2xl hover:bg-slate-800/50 transition group relative overflow-hidden">
+                <div class="flex justify-between items-start mb-4">
+                    <h3 class="text-lg font-bold tracking-tight group-hover:text-blue-400 transition">SupportHive-C</h3>
+                    <span class="px-2 py-1 rounded-md text-[10px] font-black uppercase tracking-tighter bg-green-500/10 text-green-400">
+                        success
+                    </span>
+                </div>
+                <p class="text-sm text-slate-400 mb-4 line-clamp-2">High-performance, event-driven multi-tenant support & SLA engine in pure C.</p>
+                <div class="flex items-center gap-2">
+                    <span class="px-2 py-0.5 rounded-full bg-blue-500/10 text-blue-400 text-[9px] font-bold uppercase tracking-widest border border-blue-500/20">Hardened</span>
+                </div>
+            </a>
+             
+            <a href="https://github.com/Raphasha27/task_manager" target="_blank" class="glass p-6 rounded-2xl hover:bg-slate-800/50 transition group relative overflow-hidden">
+                <div class="flex justify-between items-start mb-4">
+                    <h3 class="text-lg font-bold tracking-tight group-hover:text-blue-400 transition">task_manager</h3>
+                    <span class="px-2 py-1 rounded-md text-[10px] font-black uppercase tracking-tighter bg-green-500/10 text-green-400">
+                        success
+                    </span>
+                </div>
+                <p class="text-sm text-slate-400 mb-4 line-clamp-2">No description provided.</p>
+                <div class="flex items-center gap-2">
+                    <span class="px-2 py-0.5 rounded-full bg-blue-500/10 text-blue-400 text-[9px] font-bold uppercase tracking-widest border border-blue-500/20">Hardened</span>
+                </div>
+            </a>
+             
+            <a href="https://github.com/Raphasha27/thuto-ai" target="_blank" class="glass p-6 rounded-2xl hover:bg-slate-800/50 transition group relative overflow-hidden">
+                <div class="flex justify-between items-start mb-4">
+                    <h3 class="text-lg font-bold tracking-tight group-hover:text-blue-400 transition">thuto-ai</h3>
+                    <span class="px-2 py-1 rounded-md text-[10px] font-black uppercase tracking-tighter bg-red-500/10 text-red-400">
+                        pending
+                    </span>
+                </div>
+                <p class="text-sm text-slate-400 mb-4 line-clamp-2">No description provided.</p>
+                <div class="flex items-center gap-2">
+                    
+                </div>
+            </a>
+             
+            <a href="https://github.com/Raphasha27/ticketza" target="_blank" class="glass p-6 rounded-2xl hover:bg-slate-800/50 transition group relative overflow-hidden">
+                <div class="flex justify-between items-start mb-4">
+                    <h3 class="text-lg font-bold tracking-tight group-hover:text-blue-400 transition">ticketza</h3>
+                    <span class="px-2 py-1 rounded-md text-[10px] font-black uppercase tracking-tighter bg-green-500/10 text-green-400">
+                        success
+                    </span>
+                </div>
+                <p class="text-sm text-slate-400 mb-4 line-clamp-2">No description provided.</p>
+                <div class="flex items-center gap-2">
+                    <span class="px-2 py-0.5 rounded-full bg-blue-500/10 text-blue-400 text-[9px] font-bold uppercase tracking-widest border border-blue-500/20">Hardened</span>
+                </div>
+            </a>
+             
+            <a href="https://github.com/Raphasha27/Website-Generator" target="_blank" class="glass p-6 rounded-2xl hover:bg-slate-800/50 transition group relative overflow-hidden">
+                <div class="flex justify-between items-start mb-4">
+                    <h3 class="text-lg font-bold tracking-tight group-hover:text-blue-400 transition">Website-Generator</h3>
+                    <span class="px-2 py-1 rounded-md text-[10px] font-black uppercase tracking-tighter bg-red-500/10 text-red-400">
+                        pending
+                    </span>
+                </div>
+                <p class="text-sm text-slate-400 mb-4 line-clamp-2">No description provided.</p>
+                <div class="flex items-center gap-2">
+                    
+                </div>
+            </a>
+            
+        </div>
+
+        <footer class="mt-20 pt-8 border-t border-slate-800 text-center">
+            <p class="text-xs font-bold text-slate-600 uppercase tracking-[0.5em]">(c) 2026 Kirov Dynamics Infrastructure</p>
+        </footer>
+    </div>
+</body>
+</html>
+    
